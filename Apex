@@ -1,0 +1,9 @@
+<apex:page standardController="Account" >
+	<apex:inputField value={"!Account.name"} />
+		<apex:inputField value={"!Account.Owner.FirstName"} />
+			<apex:relatedList List="Contacts" />
+			
+			<apex:outputText value="{!contact.accountId}" rendered="false" />
+			<apex:variable value="{!contact.accountId}" var="accountId" />
+
+			<apex:page standardController="Account" recordSetVar="accounts" >
